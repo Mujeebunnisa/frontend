@@ -1,0 +1,28 @@
+# Default values for backend.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+namespace: mspace
+
+image:
+  repository: mujeeb/frontend-docker
+  pullPolicy: Never
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+
+service:
+  name: hello
+  tier: frontend
+  track: stable
+  type: LoadBalancer
+  internalPort: 80
+  protocol: TCP
+  container: nginx
+
+env:
+- name: "NAME"
+  value: "Mujeebunnisa"
+
+
