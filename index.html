@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div>
+    <h1 id="customMessage"></h1>
+</div>
+
+</body>
+<script>
+    $(document).ready(() => {
+        const url = "/message/"
+        $.ajax({
+            url: url,
+            type: "GET",
+            data: {
+                "Content-Type": undefined
+            },
+            success: function (data) {
+            appendDateAndTimeToMsg(data);
+            },
+            error: (err) => {
+                alert(err)
+            }
+        })
+    })
+    function appendDateAndTimeToMsg(hellomsg) {
+    document.getElementById("customMessage").innerHTML = getCurrentDateAndTime()+" "+hellomsg;
+}
+function getCurrentDateAndTime()
+{
+var dNow = new Date();
+var dt= (dNow.getMonth()+1) + '/' + dNow.getDate() + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+return dt;
+}
+
+</script>
+</html>
