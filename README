@@ -1,5 +1,5 @@
-### Using simple index.html and nginx.conf for frontend
-### nginx acts as gateway/LoadBalancer
+## Using simple index.html and nginx.conf for frontend
+## nginx acts as gateway/LoadBalancer
 
 ##Prerequisites for frontend to work
 
