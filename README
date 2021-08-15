@@ -46,5 +46,8 @@ minikube service frontend -n mspace
 
 ##Note:To run LoadBalancer type in minikube using minikube tunnel(start this service in seperate terminal) without which external IP would not be generated)
 
+# Deploy using helm chart
+helm install frontend frontend-helm-chart
+
 
 
